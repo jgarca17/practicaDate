@@ -25,8 +25,26 @@
 		int getYear(){
 			return this.year;
 			}
+		boolean isSameDay(Date other){
+			if(this.Day == other.getDay()){
+				return true;
+			}else{
+				return false;
+		}
+		boolean isSameMonth(Date other){
+			if(this.Month == other.getMonth()){
+				return true;
+			}else{
+				return false;
+		}
 		boolean isSameYear(Date other){
 			if(this.year == other.getYear()){
+				return true;
+			}else{
+				return false;
+		}
+		boolean isSame(Date day, Date month, Date year){
+			if(this.year == other.getYear() && this.Month == other.getMonth() && this.Day == other.getDay()){
 				return true;
 			}else{
 				return false;
