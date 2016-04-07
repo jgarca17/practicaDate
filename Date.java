@@ -1,3 +1,6 @@
+package es.unileon.prg.date;
+
+
 	public class Date{
 		int day;
 		int month;
@@ -7,46 +10,35 @@
 			this.month = month;
 			this.year = year;
 			}
-		void setDay(int day){
-			this.day =day;
-			}
 		int getDay(){
 			return this.day;
 			}
-		void setMonth(int year){
-			this.month = month;
+		void setDay(int day){
+			this.day =day;
 			}
 		int getMonth(){
 			return this.Month;
 			}
-		void setYear(int year){
-			this.year = year;
+		void setMonth(int year){
+			this.month = month;
 			}
 		int getYear(){
 			return this.year;
 			}
-		boolean isSameDay(Date other){
-			if(this.Day == other.getDay()){
-				return true;
-			}else{
-				return false;
+		void setYear(int year){
+			this.year = year;
+			}
+		
+		boolean isSameDay(Date date){
+			return(this.Day == date.getDay()){
 		}
-		boolean isSameMonth(Date other){
-			if(this.Month == other.getMonth()){
-				return true;
-			}else{
-				return false;
+		boolean isSameMonth(Date date){
+			return(this.Month == date.getMonth()
 		}
-		boolean isSameYear(Date other){
-			if(this.year == other.getYear()){
-				return true;
-			}else{
-				return false;
+		boolean isSameYear(Date date){
+			return(this.year == date.getYear()){
 		}
 		boolean isSame(Date day, Date month, Date year){
-			if(this.year == other.getYear() && this.Month == other.getMonth() && this.Day == other.getDay()){
-				return true;
-			}else{
-				return false;
+			return(this.year == date.getYear() && this.Month == date.getMonth() && this.Day == date.getDay()){
 		}
 	}
