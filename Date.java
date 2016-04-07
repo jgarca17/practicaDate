@@ -94,51 +94,60 @@ package es.unileon.prg.date;
 		
 		return correctDay;
 	}
-	public String yearStation(Date date){
-		String station = " ";
+	public String yearSeason(Date date){
+		String season = " ";
 		switch(date.getMonth()){
 		case 1: 
 		case 2: 
-			station= "Invierno"; break;
+			season= "Invierno"; break;
 		case 3: 
 			if(date.getDay()>=21){
-				station = "Primavera";
+				season = "Primavera";
 			}else{
-				station = "Invierno";
+				season = "Invierno";
 			}
 			break;
 		case 4: 
 		case 5:
-			station = "Primavera"; break;
+			season = "Primavera"; break;
 		case 6: 
 			if(date.getDay()>=21){
-				station = "Verano";
+				season = "Verano";
 			}else{
-				station = "Primavera";
+				season = "Primavera";
 			}
 			break;
 		case 7: 
 		case 8: 
-			station = "Verano"; break;
+			season = "Verano"; break;
 		case 9: 
 			if(date.getDay()>=23){
-				station = "Otoño";
+				season = "Otoño";
 			}else{
-				station = "Verano";
+				season = "Verano";
 			}
 			break;
 		case 10: 
 		case 11: 
-			station = "Otoño"; break;
+			season = "Otoño"; break;
 		case 12: 
 			if(date.getDay()>=21){
-				station = "Invierno";
+				season = "Invierno";
 			}else{
-				station = "Otoño";
+				season = "Otoño";
 			}
 			break;
 		}
 		
-		return station;
+		return season;
 	}
-	
+	public String monthsToEndOfYear(Date date){
+		Date aux = new Date(date.getDay(), date.getMonth(), date.getYear());
+		StringBuffer months = new StringBuffer();
+		for(int i=date.getMonth()+1; i<=12; i++){
+			aux.setMonth(i);
+			months.append(date.monthName(aux)+ " ");	
+		}
+		return months.toString();
+		
+	}
